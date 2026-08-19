@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lumiėra - Crema Antimanchas</title>
-    <!-- ===== FAVICON ===== -->
+  <!-- ===== FAVICON ===== -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -365,18 +365,10 @@
       100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
 
-    /* ========== RESPONSIVE ========== */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        padding: 12px 5%;
-      }
-      nav {
-        justify-content: center;
-        gap: 12px 16px;
-      }
+    /* ========================================== */
+    /* RESPONSIVE - CONSOLIDATED & CLEAN         */
+    /* ========================================== */
+    @media (max-width: 1024px) {
       .hero {
         flex-direction: column-reverse;
         text-align: center;
@@ -385,14 +377,53 @@
       .hero-text {
         padding-right: 0;
       }
+      .hero-text h1 {
+        font-size: 32px;
+      }
       .tag-group {
         justify-content: center;
       }
       .price-block {
         text-align: center;
       }
-      .lead-capture form {
-        max-width: 100%;
+      .product-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 5%;
+      }
+      nav {
+        gap: 12px 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .hero {
+        padding: 30px 5%;
+      }
+      .hero-text h1 {
+        font-size: 26px;
+      }
+      .hero-text p {
+        font-size: 15px;
+      }
+      .btn {
+        padding: 12px 24px;
+        font-size: 15px;
+        width: 100%;
+        text-align: center;
+      }
+      .tag-group span {
+        font-size: 12px;
+        padding: 3px 10px;
+      }
+      .price-block .current {
+        font-size: 28px;
       }
       .product-grid {
         grid-template-columns: 1fr;
@@ -403,169 +434,74 @@
       .video-grid {
         grid-template-columns: 1fr;
       }
-      .video-card video {
-        height: auto;
+      .lead-capture form {
+        max-width: 100%;
+      }
+      .lead-capture input {
+        font-size: 15px;
+        padding: 12px 14px;
+      }
+      .lead-capture button {
+        font-size: 16px;
+        padding: 14px;
+      }
+      .whatsapp-float {
+        bottom: 16px;
+        right: 16px;
+        width: 56px;
+        height: 56px;
+      }
+      .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
       }
     }
 
     @media (max-width: 480px) {
       .hero-text h1 {
-        font-size: 26px;
+        font-size: 22px;
       }
-      .hero-text p {
-        font-size: 15px;
+      .hero-text .badge {
+        font-size: 11px;
+        padding: 3px 10px;
       }
-      .btn {
-        padding: 10px 20px;
+      .price-block .current {
+        font-size: 24px;
+      }
+      .price-block .old {
         font-size: 14px;
       }
-      .lead-capture input {
-        padding: 12px 14px;
+      .price-block .discount {
+        font-size: 11px;
+        padding: 2px 8px;
       }
-      .lead-capture button {
-        padding: 14px;
-        font-size: 16px;
+      .btn {
+        font-size: 14px;
+        padding: 10px 20px;
       }
       .product-card {
         padding: 16px;
       }
+      .product-card h3 {
+        font-size: 18px;
+      }
+      .testimonial-card {
+        padding: 16px;
+      }
+      .video-card {
+        padding: 8px;
+      }
+      .final-cta h2 {
+        font-size: 22px;
+      }
+      .final-cta .btn {
+        font-size: 15px;
+        padding: 14px 28px;
+      }
     }
-
-    /* ========== RESPONSIVE ========== */
-@media (max-width: 1024px) {
-  .hero {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding: 40px 5%;
-  }
-  .hero-text {
-    padding-right: 0;
-  }
-  .hero-text h1 {
-    font-size: 32px;
-  }
-  .tag-group {
-    justify-content: center;
-  }
-  .price-block {
-    text-align: center;
-  }
-  .product-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 5%;
-  }
-  nav {
-    gap: 12px 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .hero {
-    padding: 30px 5%;
-  }
-  .hero-text h1 {
-    font-size: 26px;
-  }
-  .hero-text p {
-    font-size: 15px;
-  }
-  .btn {
-    padding: 12px 24px;
-    font-size: 15px;
-    width: 100%;
-    text-align: center;
-  }
-  .tag-group span {
-    font-size: 12px;
-    padding: 3px 10px;
-  }
-  .price-block .current {
-    font-size: 28px;
-  }
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-  }
-  .video-grid {
-    grid-template-columns: 1fr;
-  }
-  .lead-capture form {
-    max-width: 100%;
-  }
-  .lead-capture input {
-    font-size: 15px;
-    padding: 12px 14px;
-  }
-  .lead-capture button {
-    font-size: 16px;
-    padding: 14px;
-  }
-  .whatsapp-float {
-    bottom: 16px;
-    right: 16px;
-    width: 56px;
-    height: 56px;
-  }
-  .whatsapp-float svg {
-    width: 28px;
-    height: 28px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-text h1 {
-    font-size: 22px;
-  }
-  .hero-text .badge {
-    font-size: 11px;
-    padding: 3px 10px;
-  }
-  .price-block .current {
-    font-size: 24px;
-  }
-  .price-block .old {
-    font-size: 14px;
-  }
-  .price-block .discount {
-    font-size: 11px;
-    padding: 2px 8px;
-  }
-  .btn {
-    font-size: 14px;
-    padding: 10px 20px;
-  }
-  .product-card {
-    padding: 16px;
-  }
-  .product-card h3 {
-    font-size: 18px;
-  }
-  .testimonial-card {
-    padding: 16px;
-  }
-  .video-card {
-    padding: 8px;
-  }
-  .final-cta h2 {
-    font-size: 22px;
-  }
-  .final-cta .btn {
-    font-size: 15px;
-    padding: 14px 28px;
-  }
-}
   </style>
 </head>
-  
+
 <body>
 
   <!-- ========== HEADER ========== -->
@@ -600,7 +536,7 @@
         <span class="old">RD$2,800</span>
         <span class="discount">46.43% DESCUENTO</span>
       </div>
-      
+
       <!-- ===== ALTERNATIVE PRICE (For Mirian & Claudia) ===== -->
       <div class="price-block" id="alt-price" style="display: none;">
         <span class="current">RD$1,200</span>
@@ -608,7 +544,7 @@
         <span class="discount">52% DESCUENTO</span>
       </div>
 
-      <!-- ===== MELASMA STATEMENT (PASTE HERE) ===== -->
+      <!-- ===== MELASMA STATEMENT ===== -->
       <div style="
         background: linear-gradient(135deg, #f9f9f9, #f1f1f1);
         border-left: 4px solid #d4af37;
@@ -634,141 +570,136 @@
           Resultados visibles en tan solo <strong>2 a 3 semanas</strong> de uso constante
         </p>
       </div>
-      
 
       <!-- ========== TRUST BADGES ========== -->
-<div style="
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px 24px;
-  margin: 20px 0 30px;
-  background: rgba(255,255,255,0.7);
-  padding: 12px 20px;
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-">
-  <div style="display: flex; align-items: center; gap: 8px; font-size: clamp(13px, 1.1vw, 15px); color: #333;">
-    <span style="font-size: 22px;">💳</span>
-    <span><strong>Pago Seguro</strong><br><span style="font-size: 12px; color: #777;">Transacciones protegidas</span></span>
-  </div>
-  <div style="display: flex; align-items: center; gap: 8px; font-size: clamp(13px, 1.1vw, 15px); color: #333;">
-    <span style="font-size: 22px;">🚚</span>
-    <span><strong>Envío Gratis</strong><br><span style="font-size: 12px; color: #777;">A toda República Dominicana</span></span>
-  </div>
-  <div style="display: flex; align-items: center; gap: 8px; font-size: clamp(13px, 1.1vw, 15px); color: #333;">
-    <span style="font-size: 22px;">🔄</span>
-    <span><strong>Garantía</strong><br><span style="font-size: 12px; color: #777;">Satisfacción garantizada!</span></span>
-  </div>
-  <div style="display: flex; align-items: center; gap: 8px; font-size: clamp(13px, 1.1vw, 15px); color: #333;">
-    <span style="font-size: 22px;">⭐</span>
-    <span><strong>Calidad Premium</strong><br><span style="font-size: 12px; color: #777;">Ingredientes de alta eficacia</span></span>
-  </div>
-</div>
+      <div style="
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px 24px;
+        margin: 20px 0 30px;
+        background: rgba(255,255,255,0.7);
+        padding: 12px 20px;
+        border-radius: 12px;
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+      ">
+        <div style="display: flex; align-items: center; gap: 8px; font-size: clamp(13px, 1.1vw, 15px); color: #333;">
+          <span style="font-size: 22px;">💳</span>
+          <span><strong>Pago Seguro</strong><br><span style="font-size: 12px; color: #777;">Transacciones protegidas</span></span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; font-size: clamp(13px, 1.1vw, 15px); color: #333;">
+          <span style="font-size: 22px;">🚚</span>
+          <span><strong>Envío Gratis</strong><br><span style="font-size: 12px; color: #777;">A toda República Dominicana</span></span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; font-size: clamp(13px, 1.1vw, 15px); color: #333;">
+          <span style="font-size: 22px;">🔄</span>
+          <span><strong>Garantía</strong><br><span style="font-size: 12px; color: #777;">Satisfacción garantizada!</span></span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; font-size: clamp(13px, 1.1vw, 15px); color: #333;">
+          <span style="font-size: 22px;">⭐</span>
+          <span><strong>Calidad Premium</strong><br><span style="font-size: 12px; color: #777;">Ingredientes de alta eficacia</span></span>
+        </div>
+      </div>
 
       <!-- ========== COUNTDOWN TIMER ========== -->
-<div style="
-  text-align: center;
-  margin: 24px 0 20px;
-  padding: 16px 20px;
-  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-  border-radius: 12px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-">
-  <p style="
-    color: #d4af37;
-    font-size: clamp(13px, 1.2vw, 16px);
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  ">
-    ⏳ Oferta por tiempo limitado
-  </p>
-
-  <div id="countdown" style="
-    display: flex;
-    justify-content: center;
-    gap: clamp(12px, 3vw, 30px);
-    font-weight: bold;
-  ">
-    <div style="text-align: center;">
-      <div id="days" style="
-        font-size: clamp(28px, 4vw, 42px);
-        color: #ffffff;
-        line-height: 1;
-        font-weight: 700;
-      ">07</div>
       <div style="
-        font-size: clamp(10px, 0.8vw, 13px);
-        color: #888;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 4px;
-      ">Días</div>
-    </div>
+        text-align: center;
+        margin: 24px 0 20px;
+        padding: 16px 20px;
+        background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+        border-radius: 12px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+      ">
+        <p style="
+          color: #d4af37;
+          font-size: clamp(13px, 1.2vw, 16px);
+          font-weight: bold;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          margin-bottom: 12px;
+        ">
+          ⏳ Oferta por tiempo limitado
+        </p>
 
-    <div style="text-align: center;">
-      <div id="hours" style="
-        font-size: clamp(28px, 4vw, 42px);
-        color: #ffffff;
-        line-height: 1;
-        font-weight: 700;
-      ">23</div>
-      <div style="
-        font-size: clamp(10px, 0.8vw, 13px);
-        color: #888;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 4px;
-      ">Horas</div>
-    </div>
+        <div id="countdown" style="
+          display: flex;
+          justify-content: center;
+          gap: clamp(12px, 3vw, 30px);
+          font-weight: bold;
+        ">
+          <div style="text-align: center;">
+            <div id="days" style="
+              font-size: clamp(28px, 4vw, 42px);
+              color: #ffffff;
+              line-height: 1;
+              font-weight: 700;
+            ">07</div>
+            <div style="
+              font-size: clamp(10px, 0.8vw, 13px);
+              color: #888;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-top: 4px;
+            ">Días</div>
+          </div>
+          <div style="text-align: center;">
+            <div id="hours" style="
+              font-size: clamp(28px, 4vw, 42px);
+              color: #ffffff;
+              line-height: 1;
+              font-weight: 700;
+            ">23</div>
+            <div style="
+              font-size: clamp(10px, 0.8vw, 13px);
+              color: #888;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-top: 4px;
+            ">Horas</div>
+          </div>
+          <div style="text-align: center;">
+            <div id="minutes" style="
+              font-size: clamp(28px, 4vw, 42px);
+              color: #ffffff;
+              line-height: 1;
+              font-weight: 700;
+            ">59</div>
+            <div style="
+              font-size: clamp(10px, 0.8vw, 13px);
+              color: #888;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-top: 4px;
+            ">Minutos</div>
+          </div>
+          <div style="text-align: center;">
+            <div id="seconds" style="
+              font-size: clamp(28px, 4vw, 42px);
+              color: #d4af37;
+              line-height: 1;
+              font-weight: 700;
+            ">59</div>
+            <div style="
+              font-size: clamp(10px, 0.8vw, 13px);
+              color: #888;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-top: 4px;
+            ">Segundos</div>
+          </div>
+        </div>
 
-    <div style="text-align: center;">
-      <div id="minutes" style="
-        font-size: clamp(28px, 4vw, 42px);
-        color: #ffffff;
-        line-height: 1;
-        font-weight: 700;
-      ">59</div>
-      <div style="
-        font-size: clamp(10px, 0.8vw, 13px);
-        color: #888;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 4px;
-      ">Minutos</div>
-    </div>
+        <p style="
+          color: #999;
+          font-size: clamp(12px, 0.9vw, 14px);
+          margin-top: 12px;
+        ">
+          ⚡ ¡Aprovecha ahora antes de que termine la oferta!
+        </p>
+      </div>
 
-    <div style="text-align: center;">
-      <div id="seconds" style="
-        font-size: clamp(28px, 4vw, 42px);
-        color: #d4af37;
-        line-height: 1;
-        font-weight: 700;
-      ">59</div>
-      <div style="
-        font-size: clamp(10px, 0.8vw, 13px);
-        color: #888;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 4px;
-      ">Segundos</div>
-    </div>
-  </div>
-
-  <p style="
-    color: #999;
-    font-size: clamp(12px, 0.9vw, 14px);
-    margin-top: 12px;
-  ">
-    ⚡ ¡Aprovecha ahora antes de que termine la oferta!
-  </p>
-</div>
-
-      <a id="whatsapp-button" href="#" text="Hola%21%20Quiero%20la%20Crema%20Antimanchas%20Lumi%C4%97ra%20Forever%20con%20jab%C3%B3n%20gratis."
-         class="btn btn-whatsapp" target="_blank" style="padding: 16px 40px; font-size: clamp(16px, 1.4vw, 20px);">
+      <a id="whatsapp-button" href="#" class="btn btn-whatsapp" target="_blank" style="padding: 16px 40px; font-size: clamp(16px, 1.4vw, 20px);">
         📱 ¡Quiero la mía!
       </a>
 
@@ -778,12 +709,13 @@
     </div>
 
     <div class="hero-image">
-  <!-- ===== DEFAULT IMAGE ===== -->
+      <!-- ===== DEFAULT IMAGE ===== -->
       <img id="default-image" src="imagen_precio_actualizado.png" alt="Crema Antimanchas Lumiėra Forever" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); max-width: 100%;">
-  
-  <!-- ===== ALTERNATIVE IMAGE (For Mirian & Claudia) ===== -->
+
+      <!-- ===== ALTERNATIVE IMAGE (For Mirian & Claudia) ===== -->
       <img id="alt-image" src="crema-lumiera-new.jpg.jpeg" alt="Crema Antimanchas Lumiėra Forever - Oferta Especial" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); max-width: 100%; display: none;">
     </div>
+  </section>
 
   <!-- ========== 2. LEAD CAPTURE ========== -->
   <section class="lead-capture" id="lead-capture">
@@ -888,160 +820,102 @@
     </div>
   </section>
 
-  <!-- ========================================== -->
-<!-- WHATSAPP SCREENSHOTS (Experiencias Reales) -->
-<!-- ========================================== -->
-<section style="
-  padding: 60px 5%;
-  background: #f5f5f5;
-  text-align: center;
-">
-  <h2 style="
-    font-size: clamp(26px, 3vw, 34px);
-    margin-bottom: 10px;
+  <!-- ========== WHATSAPP SCREENSHOTS ========== -->
+  <section style="
+    padding: 60px 5%;
+    background: #f5f5f5;
+    text-align: center;
   ">
-    💬 Lo que dicen nuestros clientes
-  </h2>
-  <p style="
-    font-size: clamp(15px, 1.2vw, 18px);
-    color: #666;
-    margin-bottom: 30px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  ">
-    Conversaciones reales de WhatsApp de clientes que ya probaron la
-    <strong>Crema Antimanchas Lumiėra Forever</strong>
-  </p>
-
-  <div style="
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-    max-width: 1000px;
-    margin: 0 auto;
-  ">
-    <!-- ===== CAPTURA 1 ===== -->
-    <div style="
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      border: 1px solid #eee;
+    <h2 style="
+      font-size: clamp(26px, 3vw, 34px);
+      margin-bottom: 10px;
     ">
-      <img src="testimonial 1 (1).jpeg" alt="Testimonio de cliente en WhatsApp" style="
-        width: 100%;
-        border-radius: 10px;
-        display: block;
-      ">
-      <p style="
-        font-size: 13px;
-        color: #888;
-        margin-top: 8px;
-      ">
-        ⭐ Cliente satisfecha
-      </p>
-    </div>
-
-    <!-- ===== CAPTURA 2 ===== -->
-    <div style="
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      border: 1px solid #eee;
+      💬 Lo que dicen nuestros clientes
+    </h2>
+    <p style="
+      font-size: clamp(15px, 1.2vw, 18px);
+      color: #666;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     ">
-      <img src="testimonial 1 (2).jpeg" alt="Testimonio de cliente en WhatsApp" style="
-        width: 100%;
-        border-radius: 10px;
-        display: block;
-      ">
-      <p style="
-        font-size: 13px;
-        color: #888;
-        margin-top: 8px;
-      ">
-        ⭐ Cliente satisfecha
-      </p>
-    </div>
+      Conversaciones reales de WhatsApp de clientes que ya probaron la
+      <strong>Crema Antimanchas Lumiėra Forever</strong>
+    </p>
 
-    <!-- ===== CAPTURA 3 ===== -->
     <div style="
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      border: 1px solid #eee;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
     ">
-      <img src="testimonial 1 (3).jpeg" alt="Testimonio de cliente en WhatsApp" style="
-        width: 100%;
-        border-radius: 10px;
-        display: block;
+      <div style="
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+        border: 1px solid #eee;
       ">
-      <p style="
-        font-size: 13px;
-        color: #888;
-        margin-top: 8px;
-      ">
-        ⭐ Cliente satisfecha
-      </p>
-    </div>
-  </div>
-
-  <!-- ===== BOTÓN DE LLAMADA A LA ACCIÓN ===== -->
-  <div style="margin-top: 30px;">
-    <a id="whatsapp-button" href="#" text="Hola%21%20Quiero%20la%20Crema%20Antimanchas%20Lumi%C4%97ra%20Forever"
-       class="btn btn-whatsapp"
-       target="_blank"
-       style="
-         display: inline-block;
-         padding: 14px 36px;
-         background: #25D366;
-         color: #fff;
-         border-radius: 30px;
-         text-decoration: none;
-         font-weight: bold;
-         font-size: clamp(16px, 1.2vw, 18px);
-         transition: background 0.3s;
-       ">
-      📱 ¡Yo también quiero ver estos resultados en mi piel!
-    </a>
-  </div>
-</section>
-
-  <!-- ========== 5. VIDEOS (AT THE END) ========== -->
-  <!--<section class="video-section" id="videos">
-    <h2 style="font-size: clamp(26px, 3vw, 34px);">Conoce Más en Video</h2>
-    <div class="video-grid">
-      <div class="video-card">
-        <video controls src="tu-video-tipo-1.mp4" poster="placeholder-video1.jpg"></video>
-        <h3>Demostración de Aplicación</h3>
-        <p>Aprende la manera correcta de aplicar el gel en las áreas deseadas.</p>
+        <img src="testimonial 1 (1).jpeg" alt="Testimonio de cliente en WhatsApp" style="width:100%; border-radius:10px; display:block;">
+        <p style="font-size:13px; color:#888; margin-top:8px;">⭐ Cliente satisfecha</p>
       </div>
-      <div class="video-card">
-        <video controls src="tu-video-tipo-2.mp4" poster="placeholder-video2.jpg"></video>
-        <h3>Resultados a las 4 Semanas</h3>
-        <p>Observa cómo la piel pasa de un estado oscuro a un tono aclarado.</p>
+      <div style="
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+        border: 1px solid #eee;
+      ">
+        <img src="testimonial 1 (2).jpeg" alt="Testimonio de cliente en WhatsApp" style="width:100%; border-radius:10px; display:block;">
+        <p style="font-size:13px; color:#888; margin-top:8px;">⭐ Cliente satisfecha</p>
       </div>
-      <div class="video-card">
-        <video controls src="tu-video-tipo-3.mp4" poster="placeholder-video3.jpg"></video>
-        <h3>Opinión de Expertos</h3>
-        <p>Descubre los ingredientes clave y por qué este gel se convertirá en tu favorito.</p>
+      <div style="
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+        border: 1px solid #eee;
+      ">
+        <img src="testimonial 1 (3).jpeg" alt="Testimonio de cliente en WhatsApp" style="width:100%; border-radius:10px; display:block;">
+        <p style="font-size:13px; color:#888; margin-top:8px;">⭐ Cliente satisfecha</p>
       </div>
     </div>
-  </section>***-->
 
-  <!-- ========== 6. FINAL CTA ========== -->
+    <div style="margin-top: 30px;">
+      <a id="whatsapp-button" href="#" class="btn btn-whatsapp" target="_blank" style="
+        display: inline-block;
+        padding: 14px 36px;
+        background: #25D366;
+        color: #fff;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: clamp(16px, 1.2vw, 18px);
+        transition: background 0.3s;
+      ">
+        📱 ¡Yo también quiero ver estos resultados en mi piel!
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== VIDEOS (commented out) ========== -->
+  <!-- <section class="video-section" id="videos">
+    <h2>Conoce Más en Video</h2>
+    <div class="video-grid"> ... </div>
+  </section> -->
+
+  <!-- ========== FINAL CTA ========== -->
   <section class="final-cta" id="final-cta">
     <h2 style="font-size: clamp(26px, 3vw, 34px);">✨ ¿Listo para transformar tu piel?</h2>
     <p style="color: #ccc; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; font-size: clamp(15px, 1.2vw, 18px);">
       Crema Antimanchas + Jabón Antibacterial GRATIS + Envío Gratis a toda República Dominicana.
     </p>
-    <a id="whatsapp-button" href="#" text="Hola%21%20Quiero%20la%20Crema%20Antimanchas%20Lumi%C4%97ra%20Forever%20con%20jab%C3%B3n%20gratis."
-       class="btn btn-whatsapp" target="_blank" style="padding: 16px 40px; font-size: clamp(16px, 1.4vw, 20px);">
+    <a id="whatsapp-button" href="#" class="btn btn-whatsapp" target="_blank" style="padding: 16px 40px; font-size: clamp(16px, 1.4vw, 20px);">
       📱 ¡Quiero la mía ahora!
     </a>
     <p style="font-size: 14px; color: #888; margin-top: 16px;">✅ Envío gratis a todo RD</p>
@@ -1053,11 +927,7 @@
   </footer>
 
   <!-- ========== WHATSAPP FLOATING ========== -->
-  <a id="whatsapp-button" href="#" text="Hola%21%20Me%20interesa%20la%20Crema%20Antimanchas%20Lumi%C4%97ra"
-     class="whatsapp-float"
-     target="_blank"
-     aria-label="Contactar por WhatsApp"
-     rel="noopener noreferrer">
+  <a id="whatsapp-button" href="#" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp" rel="noopener noreferrer">
     <svg viewBox="0 0 24 24">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
@@ -1086,7 +956,6 @@
         date: new Date().toISOString()
       };
 
-      // 🔁 REPLACE with your actual Google Apps Script URL
       fetch('https://script.google.com/macros/s/AKfycbyl8CW6-Jm46lXsf8UG9pIDhImMepNoHlWGJCD1tYemp2pEzIGLJg5YKTm7hTeXy4Dc/exec', {
         method: 'POST',
         mode: 'no-cors',
@@ -1109,102 +978,72 @@
     });
   </script>
 
-<!-- ========== COUNTDOWN TIMER SCRIPT ========== -->
-<script>
-  (function() {
-    // Set the countdown date (7 days from now)
-    var countdownDate = new Date();
-    countdownDate.setDate(countdownDate.getDate() + 7);
+  <!-- ========== COUNTDOWN TIMER SCRIPT ========== -->
+  <script>
+    (function() {
+      var countdownDate = new Date();
+      countdownDate.setDate(countdownDate.getDate() + 7);
 
-    function updateCountdown() {
-      var now = new Date().getTime();
-      var distance = countdownDate.getTime() - now;
+      function updateCountdown() {
+        var now = new Date().getTime();
+        var distance = countdownDate.getTime() - now;
 
-      // If timer reaches zero, reset to 7 days
-      if (distance < 0) {
-        countdownDate = new Date();
-        countdownDate.setDate(countdownDate.getDate() + 7);
-        distance = countdownDate.getTime() - now;
+        if (distance < 0) {
+          countdownDate = new Date();
+          countdownDate.setDate(countdownDate.getDate() + 7);
+          distance = countdownDate.getTime() - now;
+        }
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
       }
 
-      // Calculate time units
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+  </script>
 
-      // Format to always show 2 digits
-      var daysStr = String(days).padStart(2, '0');
-      var hoursStr = String(hours).padStart(2, '0');
-      var minutesStr = String(minutes).padStart(2, '0');
-      var secondsStr = String(seconds).padStart(2, '0');
-
-      // Update the DOM
-      document.getElementById('days').textContent = daysStr;
-      document.getElementById('hours').textContent = hoursStr;
-      document.getElementById('minutes').textContent = minutesStr;
-      document.getElementById('seconds').textContent = secondsStr;
-    }
-
-    // Update every second
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
-  })();
-</script>
-
-<script>
-  (function() {
-    // ==========================================
-    // SALES TEAM MAPPING
-    // ==========================================
-    const salesTeam = {
+  <!-- ========== MAIN SCRIPT (WhatsApp + Dynamic Content) ========== -->
+  <script>
+    (function() {
+      const salesTeam = {
         'Nika': '18096248042',
         'Mirian': '18094917174',
         'Claudia': '18494017896'
-    };
+      };
+      const defaultNumber = '18295146889';
+      const message = "Hola!%20Quiero%20la%20Crema%20Antimanchas%20Lumi%C4%97ra%20Forever";
 
-    // ==========================================
-    // DEFAULT NUMBER
-    // ==========================================
-    const defaultNumber = '18295146889';
-    const message = "Hola!%20Quiero%20la%20Crema%20Antimanchas%20Lumi%C4%97ra%20Forever";
-
-    // ==========================================
-    // GET REP CODE FROM URL
-    // ==========================================
-    function getRepCode() {
+      function getRepCode() {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get('rep');
-    }
+      }
 
-    // ==========================================
-    // GET WHATSAPP NUMBER
-    // ==========================================
-    function getWhatsAppNumber() {
+      function getWhatsAppNumber() {
         const repCode = getRepCode();
         if (repCode && salesTeam[repCode]) {
-            return salesTeam[repCode];
+          return salesTeam[repCode];
         }
         return defaultNumber;
-    }
+      }
 
-    // ==========================================
-    // UPDATE WHATSAPP LINKS
-    // ==========================================
-    function updateWhatsAppLinks() {
+      function updateWhatsAppLinks() {
         const phoneNumber = getWhatsAppNumber();
         const buttons = document.querySelectorAll('#whatsapp-button');
         buttons.forEach(button => {
-            button.href = `https://wa.me/${phoneNumber}?text=${message}`;
+          button.href = `https://wa.me/${phoneNumber}?text=${message}`;
         });
         console.log('✅ WhatsApp number set to:', phoneNumber);
-    }
+      }
 
-    // ==========================================
-    // UPDATE IMAGE & PRICE (For Mirian & Claudia)
-    // ==========================================
-    function updateContentForRep() {
+      function updateContentForRep() {
         const repCode = getRepCode();
         const defaultPrice = document.getElementById('default-price');
         const altPrice = document.getElementById('alt-price');
@@ -1212,36 +1051,32 @@
         const altImage = document.getElementById('alt-image');
 
         if (repCode === 'Mirian' || repCode === 'Claudia') {
-            if (defaultPrice) defaultPrice.style.display = 'none';
-            if (altPrice) altPrice.style.display = 'block';
-            if (defaultImage) defaultImage.style.display = 'none';
-            if (altImage) altImage.style.display = 'block';
-            console.log('🔄 Alternative content loaded for:', repCode);
+          if (defaultPrice) defaultPrice.style.display = 'none';
+          if (altPrice) altPrice.style.display = 'block';
+          if (defaultImage) defaultImage.style.display = 'none';
+          if (altImage) altImage.style.display = 'block';
+          console.log('🔄 Alternative content loaded for:', repCode);
         } else {
-            if (defaultPrice) defaultPrice.style.display = 'block';
-            if (altPrice) altPrice.style.display = 'none';
-            if (defaultImage) defaultImage.style.display = 'block';
-            if (altImage) altImage.style.display = 'none';
-            console.log('🔄 Default content loaded');
+          if (defaultPrice) defaultPrice.style.display = 'block';
+          if (altPrice) altPrice.style.display = 'none';
+          if (defaultImage) defaultImage.style.display = 'block';
+          if (altImage) altImage.style.display = 'none';
+          console.log('🔄 Default content loaded');
         }
-    }
+      }
 
-    // ==========================================
-    // INIT
-    // ==========================================
-    function init() {
+      function init() {
         updateWhatsAppLinks();
         updateContentForRep();
-    }
+      }
 
-    if (document.readyState === 'loading') {
+      if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
-    } else {
+      } else {
         init();
-    }
-
-  })();
-</script>
+      }
+    })();
+  </script>
 
 </body>
 </html>
