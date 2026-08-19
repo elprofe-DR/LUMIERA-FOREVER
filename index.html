@@ -460,15 +460,45 @@
         <span>✅ Envío gratis a RD</span>
       </div>
 
-      <div class="price-block">
+      <!-- ===== DEFAULT PRICE ===== -->
+      <div class="price-block" id="default-price">
         <span class="current">RD$1,495</span>
         <span class="old">RD$2,800</span>
         <span class="discount">46.43% DESCUENTO</span>
       </div>
+      
+      <!-- ===== ALTERNATIVE PRICE (For Mirian & Claudia) ===== -->
+      <div class="price-block" id="alt-price" style="display: none;">
+        <span class="current">RD$1,200</span>
+        <span class="old">RD$2,500</span>
+        <span class="discount">52% DESCUENTO</span>
+      </div>
 
       <!-- ===== MELASMA STATEMENT (PASTE HERE) ===== -->
-      <div style="...">
-        <p>✨ <strong>Clínicamente probado</strong> – Ayuda a eliminar la <strong>melasma</strong> y unificar el tono de la piel</p>
+      <div style="
+        background: linear-gradient(135deg, #f9f9f9, #f1f1f1);
+        border-left: 4px solid #d4af37;
+        padding: 14px 20px;
+        border-radius: 8px;
+        margin: 16px 0 24px;
+        text-align: left;
+      ">
+        <p style="
+          font-size: clamp(14px, 1.1vw, 17px);
+          color: #111;
+          font-weight: 500;
+          margin: 0;
+          line-height: 1.5;
+        ">
+          ✨ <strong>Clínicamente probado</strong> – Ayuda a eliminar la <strong>melasma</strong> y unificar el tono de la piel
+        </p>
+        <p style="
+          font-size: clamp(12px, 0.9vw, 14px);
+          color: #777;
+          margin: 4px 0 0 0;
+        ">
+          Resultados visibles en tan solo <strong>2 a 3 semanas</strong> de uso constante
+        </p>
       </div>
       
 
@@ -614,9 +644,12 @@
     </div>
 
     <div class="hero-image">
-      <img src="imagen_precio_actualizado.png" alt="Crema Antimanchas Lumiėra Forever">
+  <!-- ===== DEFAULT IMAGE ===== -->
+      <img id="default-image" src="imagen_precio_actualizado.png" alt="Crema Antimanchas Lumiėra Forever" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); max-width: 100%;">
+  
+  <!-- ===== ALTERNATIVE IMAGE (For Mirian & Claudia) ===== -->
+      <img id="alt-image" src="crema-lumiera-new.jpg" alt="Crema Antimanchas Lumiėra Forever - Oferta Especial" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); max-width: 100%; display: none;">
     </div>
-  </section>
 
   <!-- ========== 2. LEAD CAPTURE ========== -->
   <section class="lead-capture" id="lead-capture">
@@ -988,52 +1021,89 @@
 
 <script>
   (function() {
-    // --- 1. Your Sales Team Mapping ---
-    // IMPORTANT: Replace the placeholder phone numbers with the real ones.
+    // ==========================================
+    // SALES TEAM MAPPING
+    // ==========================================
     const salesTeam = {
-        'Nika': '18096248042',   // Replace with Ana's real number
-        'Mirian': '18094917174',  // Replace with Luis's real number
-        'Claudia': '18494017896'  // Replace with Maria's real number
+        'Nika': '18096248042',
+        'Mirian': '18094917174',
+        'Claudia': '18494017896'
     };
 
-    // --- 2. Your Default Number (for ads / direct traffic) ---
-    const defaultNumber = '18295146889'; // <-- Replace with YOUR WhatsApp number
+    // ==========================================
+    // DEFAULT NUMBER
+    // ==========================================
+    const defaultNumber = '18295146889';
+    const message = "Hola!%20Quiero%20la%20Crema%20Antimanchas%20Lumi%C4%97ra%20Forever";
 
-    // --- 3. Get the sales rep code from the URL ---
+    // ==========================================
+    // GET REP CODE FROM URL
+    // ==========================================
     function getRepCode() {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get('rep');
     }
 
-    // --- 4. Get the correct WhatsApp number ---
+    // ==========================================
+    // GET WHATSAPP NUMBER
+    // ==========================================
     function getWhatsAppNumber() {
         const repCode = getRepCode();
         if (repCode && salesTeam[repCode]) {
-            return salesTeam[repCode]; // Return the sales rep's number
+            return salesTeam[repCode];
         }
-        return defaultNumber; // Return the default number
+        return defaultNumber;
     }
 
-    // --- 5. Update the WhatsApp button(s) on the page ---
+    // ==========================================
+    // UPDATE WHATSAPP LINKS
+    // ==========================================
     function updateWhatsAppLinks() {
         const phoneNumber = getWhatsAppNumber();
-        const message = "Hola!%20Quiero%20la%20Crema%20Antimanchas%20Lumi%C4%97ra%20Forever"; // Your pre-filled message
-
-        // Find all elements with the ID 'whatsapp-button'
         const buttons = document.querySelectorAll('#whatsapp-button');
         buttons.forEach(button => {
-            // Construct the new WhatsApp link
-            const newHref = `https://wa.me/${phoneNumber}?text=${message}`;
-            button.href = newHref;
+            button.href = `https://wa.me/${phoneNumber}?text=${message}`;
         });
+        console.log('✅ WhatsApp number set to:', phoneNumber);
     }
 
-    // --- 6. Run the function when the page loads ---
-    // This waits for the page to be fully loaded before trying to update the links
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', updateWhatsAppLinks);
-    } else {
+    // ==========================================
+    // UPDATE IMAGE & PRICE (For Mirian & Claudia)
+    // ==========================================
+    function updateContentForRep() {
+        const repCode = getRepCode();
+        const defaultPrice = document.getElementById('default-price');
+        const altPrice = document.getElementById('alt-price');
+        const defaultImage = document.getElementById('default-image');
+        const altImage = document.getElementById('alt-image');
+
+        if (repCode === 'Mirian' || repCode === 'Claudia') {
+            if (defaultPrice) defaultPrice.style.display = 'none';
+            if (altPrice) altPrice.style.display = 'block';
+            if (defaultImage) defaultImage.style.display = 'none';
+            if (altImage) altImage.style.display = 'block';
+            console.log('🔄 Alternative content loaded for:', repCode);
+        } else {
+            if (defaultPrice) defaultPrice.style.display = 'block';
+            if (altPrice) altPrice.style.display = 'none';
+            if (defaultImage) defaultImage.style.display = 'block';
+            if (altImage) altImage.style.display = 'none';
+            console.log('🔄 Default content loaded');
+        }
+    }
+
+    // ==========================================
+    // INIT
+    // ==========================================
+    function init() {
         updateWhatsAppLinks();
+        updateContentForRep();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
     }
 
   })();
