@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumiėra - Crema Antimanchas</title>
+  <style>
+    /* ========== BASE ========== */
+    :root {
+      --primary: #d4af37;
+      --dark: #111111;
+      --light: #f9f9f9;
+      --gray: #666666;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+    body {
+      background: #ffffff;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .container {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 5%;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: clamp(20px, 4vw, 28px);
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    nav {
+      display: flex;
+      gap: clamp(10px, 2vw, 24px);
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: clamp(13px, 1.2vw, 16px);
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 5%;
+      background: linear-gradient(135deg, #f9f9f9, #f1f1f1);
+      gap: 30px;
+    }
+    .hero-text {
+      flex: 1 1 300px;
+    }
+    .hero-text .badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: clamp(12px, 1vw, 14px);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .hero-text h1 {
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero-text p {
+      font-size: clamp(15px, 1.5vw, 20px);
+      color: var(--gray);
+      margin-bottom: 16px;
+    }
+    .hero-image {
+      flex: 1 1 280px;
+      text-align: center;
+    }
+    .hero-image img {
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      max-width: 100%;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background-color: var(--dark);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s;
+      font-size: clamp(14px, 1.2vw, 18px);
+    }
+    .btn:hover {
+      background-color: var(--primary);
+    }
+    .btn-whatsapp {
+      background: #25D366;
+    }
+    .btn-whatsapp:hover {
+      background: #1ebe5c;
+    }
+    .tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      margin: 16px 0 24px;
+    }
+    .tag-group span {
+      background: #fff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--primary);
+      font-size: clamp(12px, 1vw, 14px);
+    }
+    .price-block {
+      margin-bottom: 24px;
+    }
+    .price-block .current {
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: bold;
+      color: #111;
+    }
+    .price-block .old {
+      font-size: clamp(14px, 1.2vw, 18px);
+      color: #888;
+      text-decoration: line-through;
+      margin-left: 10px;
+    }
+    .price-block .discount {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 2px 12px;
+      border-radius: 4px;
+      font-size: clamp(12px, 1vw, 14px);
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    /* ========== LEAD CAPTURE ========== */
+    .lead-capture {
+      padding: 50px 5%;
+      background: linear-gradient(135deg, #f9f9f9, #f1f1f1);
+      text-align: center;
+      border-top: 2px solid var(--primary);
+      border-bottom: 2px solid var(--primary);
+    }
+    .lead-capture form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .lead-capture input {
+      padding: 14px 18px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: clamp(14px, 1.2vw, 16px);
+      width: 100%;
+    }
+    .lead-capture button {
+      padding: 16px;
+      background: #111;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      font-size: clamp(16px, 1.4vw, 20px);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .lead-capture button:hover {
+      background: var(--primary);
+    }
+
+    /* ========== PRODUCT DETAILS ========== */
+    .product-details {
+      padding: 60px 5%;
+      background: #ffffff;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .product-card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #eee;
+    }
+    .product-card.free {
+      border: 2px solid var(--primary);
+      position: relative;
+    }
+    .product-card.free .badge-free {
+      position: absolute;
+      top: -12px;
+      right: 16px;
+      background: var(--primary);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: clamp(12px, 1vw, 14px);
+      font-weight: bold;
+    }
+    .product-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .product-card ul li {
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+      font-size: clamp(13px, 1vw, 15px);
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials {
+      padding: 60px 5%;
+      background: #fff;
+      text-align: center;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      text-align: left;
+      margin-top: 30px;
+    }
+    .testimonial-card {
+      background: var(--light);
+      padding: 24px;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+    }
+    .testimonial-card p {
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+    .testimonial-card .author {
+      font-weight: bold;
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* ========== VIDEOS ========== */
+    .video-section {
+      padding: 60px 5%;
+      background: var(--light);
+      text-align: center;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+      text-align: left;
+    }
+    .video-card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #eee;
+      padding: 12px;
+    }
+    .video-card video {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      border-radius: 6px;
+      background: #000;
+      object-fit: cover;
+    }
+
+    /* ========== FINAL CTA ========== */
+    .final-cta {
+      background: var(--dark);
+      color: #fff;
+      padding: 60px 5%;
+      text-align: center;
+    }
+    .final-cta .btn {
+      background: #25D366;
+    }
+    .final-cta .btn:hover {
+      background: #1ebe5c;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      text-align: center;
+      padding: 24px 5%;
+      border-top: 1px solid #eee;
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* ========== WHATSAPP FLOATING ========== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      width: clamp(56px, 8vw, 64px);
+      height: clamp(56px, 8vw, 64px);
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      transition: transform 0.2s;
+      animation: pulse-whatsapp 2s infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+    .whatsapp-float svg {
+      width: clamp(28px, 4vw, 34px);
+      height: clamp(28px, 4vw, 34px);
+      fill: white;
+    }
+    @keyframes pulse-whatsapp {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+      70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 5%;
+      }
+      nav {
+        justify-content: center;
+        gap: 12px 16px;
+      }
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 5%;
+      }
+      .hero-text {
+        padding-right: 0;
+      }
+      .tag-group {
+        justify-content: center;
+      }
+      .price-block {
+        text-align: center;
+      }
+      .lead-capture form {
+        max-width: 100%;
+      }
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+      .video-card video {
+        height: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text h1 {
+        font-size: 26px;
+      }
+      .hero-text p {
+        font-size: 15px;
+      }
+      .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+      .lead-capture input {
+        padding: 12px 14px;
+      }
+      .lead-capture button {
+        padding: 14px;
+        font-size: 16px;
+      }
+      .product-card {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="logo">LUMIĖRA</div>
+    <nav>
+      <a href="#product-details">Producto</a>
+      <a href="#testimonials">Testimonios</a>
+      <a href="#videos">Videos</a>
+      <a href="#final-cta">Comprar</a>
+    </nav>
+  </header>
+
+  <!-- ========== 1. HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <span class="badge">🔥 OFERTA ESPECIAL</span>
+      <h1>Crema Facial Antimanchas<br><span style="color: var(--primary);">Lumiėra Forever</span></h1>
+      <p>Elimina manchas profundas, unifica el tono y rejuvenece tu piel.<br>
+      <strong style="color: var(--primary);">¡Jabón Antibacterial GRATIS incluido!</strong></p>
+
+      <div class="tag-group">
+        <span>✅ Elimina manchas</span>
+        <span>✅ Unifica el tono</span>
+        <span>✅ FPS 15</span>
+        <span>✅ Envío gratis a RD</span>
+      </div>
+
+      <div class="price-block">
+        <span class="current">RD$1,500</span>
+        <span class="old">RD$2,200</span>
+        <span class="discount">32% OFF</span>
+      </div>
+
+      <!-- ========== TRUST BADGES ========== -->
+<div style="
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 24px;
+  margin: 20px 0 30px;
+  background: rgba(255,255,255,0.7);
+  padding: 12px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+">
+  <div style="display: flex; align-items: center; gap: 8px; font-size: clamp(13px, 1.1vw, 15px); color: #333;">
+    <span style="font-size: 22px;">💳</span>
+    <span><strong>Pago Seguro</strong><br><span style="font-size: 12px; color: #777;">Transacciones protegidas</span></span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 8px; font-size: clamp(13px, 1.1vw, 15px); color: #333;">
+    <span style="font-size: 22px;">🚚</span>
+    <span><strong>Envío Gratis</strong><br><span style="font-size: 12px; color: #777;">A toda República Dominicana</span></span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 8px; font-size: clamp(13px, 1.1vw, 15px); color: #333;">
+    <span style="font-size: 22px;">🔄</span>
+    <span><strong>Garantía</strong><br><span style="font-size: 12px; color: #777;">Satisfacción o te devolvemos</span></span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 8px; font-size: clamp(13px, 1.1vw, 15px); color: #333;">
+    <span style="font-size: 22px;">⭐</span>
+    <span><strong>Calidad Premium</strong><br><span style="font-size: 12px; color: #777;">Ingredientes de alta eficacia</span></span>
+  </div>
+</div>
+
+      <!-- ========== COUNTDOWN TIMER ========== -->
+<div style="
+  text-align: center;
+  margin: 24px 0 20px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+">
+  <p style="
+    color: #d4af37;
+    font-size: clamp(13px, 1.2vw, 16px);
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  ">
+    ⏳ Oferta por tiempo limitado
+  </p>
+
+  <div id="countdown" style="
+    display: flex;
+    justify-content: center;
+    gap: clamp(12px, 3vw, 30px);
+    font-weight: bold;
+  ">
+    <div style="text-align: center;">
+      <div id="days" style="
+        font-size: clamp(28px, 4vw, 42px);
+        color: #ffffff;
+        line-height: 1;
+        font-weight: 700;
+      ">07</div>
+      <div style="
+        font-size: clamp(10px, 0.8vw, 13px);
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 4px;
+      ">Días</div>
+    </div>
+
+    <div style="text-align: center;">
+      <div id="hours" style="
+        font-size: clamp(28px, 4vw, 42px);
+        color: #ffffff;
+        line-height: 1;
+        font-weight: 700;
+      ">23</div>
+      <div style="
+        font-size: clamp(10px, 0.8vw, 13px);
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 4px;
+      ">Horas</div>
+    </div>
+
+    <div style="text-align: center;">
+      <div id="minutes" style="
+        font-size: clamp(28px, 4vw, 42px);
+        color: #ffffff;
+        line-height: 1;
+        font-weight: 700;
+      ">59</div>
+      <div style="
+        font-size: clamp(10px, 0.8vw, 13px);
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 4px;
+      ">Minutos</div>
+    </div>
+
+    <div style="text-align: center;">
+      <div id="seconds" style="
+        font-size: clamp(28px, 4vw, 42px);
+        color: #d4af37;
+        line-height: 1;
+        font-weight: 700;
+      ">59</div>
+      <div style="
+        font-size: clamp(10px, 0.8vw, 13px);
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 4px;
+      ">Segundos</div>
+    </div>
+  </div>
+
+  <p style="
+    color: #999;
+    font-size: clamp(12px, 0.9vw, 14px);
+    margin-top: 12px;
+  ">
+    ⚡ ¡Aprovecha ahora antes de que termine la oferta!
+  </p>
+</div>
+
+      <a id="whatsapp-button-0" href="#" text="Hola%21%20Quiero%20la%20Crema%20Antimanchas%20Lumi%C4%97ra%20Forever%20con%20jab%C3%B3n%20gratis."
+         class="btn btn-whatsapp" target="_blank" style="padding: 16px 40px; font-size: clamp(16px, 1.4vw, 20px);">
+        📱 ¡Quiero la mía!
+      </a>
+
+      <p style="font-size: clamp(13px, 1vw, 15px); color: #999; margin-top: 16px;">
+        ⭐ Incluye <strong>Jabón Antibacterial</strong> completamente GRATIS
+      </p>
+    </div>
+
+    <div class="hero-image">
+      <img src="imagen_precio_actualizado.png" alt="Crema Antimanchas Lumiėra Forever">
+    </div>
+  </section>
+
+  <!-- ========== 2. LEAD CAPTURE ========== -->
+  <section class="lead-capture" id="lead-capture">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <h2 style="font-size: clamp(24px, 3vw, 32px); margin-bottom: 10px;">✨ ¿Quieres enterarte de todas nuestras promociones y cuando lanzamos nuevos productos?</h2>
+      <p style="color: #666; margin-bottom: 30px; font-size: clamp(15px, 1.2vw, 18px);">Déjanos tu nombre, correo y WhatsApp y te avisaremos primero.</p>
+
+      <form id="leadForm">
+        <input type="text" id="leadName" placeholder="Tu nombre completo" required>
+        <input type="email" id="leadEmail" placeholder="Correo electrónico" required>
+        <input type="tel" id="leadPhone" placeholder="WhatsApp (ej: 809-555-1234)">
+        <button type="submit">📩 Quiero ser de los primeros</button>
+      </form>
+
+      <p style="font-size: 13px; color: #999; margin-top: 12px;">No spam. Solo info sobre lanzamientos y ofertas exclusivas.</p>
+      <div id="formStatus" style="margin-top: 12px; font-weight: bold; color: var(--primary);"></div>
+    </div>
+  </section>
+
+  <!-- ========== 3. PRODUCT DETAILS ========== -->
+  <section class="product-details" id="product-details">
+    <h2 style="font-size: clamp(26px, 3vw, 34px); text-align: center;">Detalles del Producto</h2>
+    <p style="text-align: center; color: #666; margin-bottom: 20px; font-size: clamp(15px, 1.2vw, 18px);">
+      Todo lo que necesitas saber sobre la <strong>Crema Antimanchas</strong> y el <strong>Jabón Antibacterial</strong> (GRATIS)
+    </p>
+
+    <div class="product-grid">
+      <!-- CREMA -->
+      <div class="product-card">
+        <h3 style="font-size: clamp(20px, 2vw, 26px);">🧴 Crema Facial Antimanchas</h3>
+        <p style="color: #666; font-size: 14px; margin: 8px 0 12px;"><strong>Contenido:</strong> 2 oz / 60 g</p>
+        <p style="font-size: 15px; margin-bottom: 16px;">
+          <strong>Precio:</strong> <span style="font-size: clamp(22px, 2.5vw, 28px); font-weight: bold; color: var(--primary);">RD$1,500</span>
+          <span style="text-decoration: line-through; color: #999; margin-left: 10px;">RD$2,200</span>
+          <span style="background: var(--primary); color: #fff; padding: 2px 10px; border-radius: 4px; font-size: 13px; margin-left: 8px;">32% OFF</span>
+        </p>
+
+        <h4 style="font-size: 16px; margin: 20px 0 10px;">✅ Beneficios</h4>
+        <ul>
+          <li>✔ Elimina las manchas más profundas y unifica el tono</li>
+          <li>✔ Fórmula suave y no agresiva</li>
+          <li>✔ Aporta brillo natural desde la hidratación profunda</li>
+          <li>✔ Reduce espinillas, líneas de expresión y arrugas</li>
+          <li>✔ Filtro solar <strong>FPS 15</strong> sin rebote</li>
+        </ul>
+
+        <h4 style="font-size: 16px; margin: 20px 0 10px;">🧪 Ingredientes Clave</h4>
+        <ul>
+          <li><strong>Vitamina E:</strong> Protege del daño ambiental</li>
+          <li><strong>Colágeno:</strong> Mejora elasticidad y firmeza</li>
+          <li><strong>Ácido Hialurónico:</strong> Hidrata profundamente</li>
+        </ul>
+
+        <h4 style="font-size: 16px; margin: 20px 0 10px;">📖 Modo de Uso</h4>
+        <p style="font-size: 14px; color: #555; line-height: 1.6;">Aplicar después de limpiar el rostro mediante suave masaje circular. Uso diario <strong>mañana y noche</strong>.</p>
+      </div>
+
+      <!-- JABÓN GRATIS -->
+      <div class="product-card free">
+        <span class="badge-free">🎁 GRATIS</span>
+        <h3 style="font-size: clamp(20px, 2vw, 26px);">🧼 Jabón Antibacterial</h3>
+        <p style="color: #666; font-size: 14px; margin: 8px 0 12px;"><strong>Contenido:</strong> 2 oz / 60 g</p>
+        <p style="font-size: 16px; font-weight: bold; color: var(--primary); margin-bottom: 16px;">✅ COMPLETAMENTE GRATIS</p>
+
+        <h4 style="font-size: 16px; margin: 20px 0 10px;">✅ Beneficios</h4>
+        <ul>
+          <li>✔ Elimina bacterias que causan acné</li>
+          <li>✔ Remueve exceso de grasa e impurezas</li>
+          <li>✔ Limpia a profundidad sin resecar</li>
+          <li>✔ Prepara la piel para la crema</li>
+        </ul>
+
+        <h4 style="font-size: 16px; margin: 20px 0 10px;">🧪 Ingredientes Clave</h4>
+        <ul>
+          <li><strong>Extracto de Caléndula:</strong> Calma y reduce inflamación</li>
+          <li><strong>Ácido Salicílico:</strong> Penetra poros y previene brotes</li>
+          <li><strong>Glicerina + Aloe Vera:</strong> Hidrata y regenera</li>
+        </ul>
+
+        <h4 style="font-size: 16px; margin: 20px 0 10px;">📖 Modo de Uso</h4>
+        <p style="font-size: 14px; color: #555; line-height: 1.6;">Aplicar, dejar actuar <strong>10 minutos</strong>, enjuagar. Uso diario <strong>mañana y noche</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4. TESTIMONIALS ========== -->
+  <section class="testimonials" id="testimonials">
+    <h2 style="font-size: clamp(26px, 3vw, 34px);">Lo que dicen nuestros usuarios</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>"Los resultados con Lumiėra superaron mis expectativas. En pocas semanas noté el cambio."</p>
+        <div class="author">— Sofía M.</div>
+      </div>
+      <div class="testimonial-card">
+        <p>"Es increíble ver una fórmula que realmente cumple lo que promete. La textura es ligera."</p>
+        <div class="author">— Andrea R.</div>
+      </div>
+      <div class="testimonial-card">
+        <p>"Me encanta la confianza que me ha devuelto. Los videos de aplicación me ayudaron muchísimo."</p>
+        <div class="author">— Laura P.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+<!-- WHATSAPP SCREENSHOTS (Experiencias Reales) -->
+<!-- ========================================== -->
+<section style="
+  padding: 60px 5%;
+  background: #f5f5f5;
+  text-align: center;
+">
+  <h2 style="
+    font-size: clamp(26px, 3vw, 34px);
+    margin-bottom: 10px;
+  ">
+    💬 Lo que dicen nuestros clientes
+  </h2>
+  <p style="
+    font-size: clamp(15px, 1.2vw, 18px);
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  ">
+    Conversaciones reales de WhatsApp de clientes que ya probaron la
+    <strong>Crema Antimanchas Lumiėra Forever</strong>
+  </p>
+
+  <div style="
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  ">
+    <!-- ===== CAPTURA 1 ===== -->
+    <div style="
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      border: 1px solid #eee;
+    ">
+      <img src="testimonial 1 (1).jpeg" alt="Testimonio de cliente en WhatsApp" style="
+        width: 100%;
+        border-radius: 10px;
+        display: block;
+      ">
+      <p style="
+        font-size: 13px;
+        color: #888;
+        margin-top: 8px;
+      ">
+        ⭐ Cliente satisfecha
+      </p>
+    </div>
+
+    <!-- ===== CAPTURA 2 ===== -->
+    <div style="
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      border: 1px solid #eee;
+    ">
+      <img src="testimonial 1 (2).jpeg" alt="Testimonio de cliente en WhatsApp" style="
+        width: 100%;
+        border-radius: 10px;
+        display: block;
+      ">
+      <p style="
+        font-size: 13px;
+        color: #888;
+        margin-top: 8px;
+      ">
+        ⭐ Cliente satisfecha
+      </p>
+    </div>
+
+    <!-- ===== CAPTURA 3 ===== -->
+    <div style="
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      border: 1px solid #eee;
+    ">
+      <img src="testimonial 1 (3).jpeg" alt="Testimonio de cliente en WhatsApp" style="
+        width: 100%;
+        border-radius: 10px;
+        display: block;
+      ">
+      <p style="
+        font-size: 13px;
+        color: #888;
+        margin-top: 8px;
+      ">
+        ⭐ Cliente satisfecha
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== BOTÓN DE LLAMADA A LA ACCIÓN ===== -->
+  <div style="margin-top: 30px;">
+    <a id="whatsapp-button-1" href="#" text="Hola%21%20Quiero%20la%20Crema%20Antimanchas%20Lumi%C4%97ra%20Forever"
+       class="btn btn-whatsapp"
+       target="_blank"
+       style="
+         display: inline-block;
+         padding: 14px 36px;
+         background: #25D366;
+         color: #fff;
+         border-radius: 30px;
+         text-decoration: none;
+         font-weight: bold;
+         font-size: clamp(16px, 1.2vw, 18px);
+         transition: background 0.3s;
+       ">
+      📱 ¡Yo también quiero ver estos resultados en mi piel!
+    </a>
+  </div>
+</section>
+
+  <!-- ========== 5. VIDEOS (AT THE END) ========== -->
+  <!--<section class="video-section" id="videos">
+    <h2 style="font-size: clamp(26px, 3vw, 34px);">Conoce Más en Video</h2>
+    <div class="video-grid">
+      <div class="video-card">
+        <video controls src="tu-video-tipo-1.mp4" poster="placeholder-video1.jpg"></video>
+        <h3>Demostración de Aplicación</h3>
+        <p>Aprende la manera correcta de aplicar el gel en las áreas deseadas.</p>
+      </div>
+      <div class="video-card">
+        <video controls src="tu-video-tipo-2.mp4" poster="placeholder-video2.jpg"></video>
+        <h3>Resultados a las 4 Semanas</h3>
+        <p>Observa cómo la piel pasa de un estado oscuro a un tono aclarado.</p>
+      </div>
+      <div class="video-card">
+        <video controls src="tu-video-tipo-3.mp4" poster="placeholder-video3.jpg"></video>
+        <h3>Opinión de Expertos</h3>
+        <p>Descubre los ingredientes clave y por qué este gel se convertirá en tu favorito.</p>
+      </div>
+    </div>
+  </section>***-->
+
+  <!-- ========== 6. FINAL CTA ========== -->
+  <section class="final-cta" id="final-cta">
+    <h2 style="font-size: clamp(26px, 3vw, 34px);">✨ ¿Listo para transformar tu piel?</h2>
+    <p style="color: #ccc; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; font-size: clamp(15px, 1.2vw, 18px);">
+      Crema Antimanchas + Jabón Antibacterial GRATIS + Envío Gratis a toda República Dominicana.
+    </p>
+    <a id="whatsapp-button-2" href="#" text="Hola%21%20Quiero%20la%20Crema%20Antimanchas%20Lumi%C4%97ra%20Forever%20con%20jab%C3%B3n%20gratis."
+       class="btn btn-whatsapp" target="_blank" style="padding: 16px 40px; font-size: clamp(16px, 1.4vw, 20px);">
+      📱 ¡Quiero la mía ahora!
+    </a>
+    <p style="font-size: 14px; color: #888; margin-top: 16px;">✅ Envío gratis a todo RD</p>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>© 2026 Lumiėra. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- ========== WHATSAPP FLOATING ========== -->
+  <a id="whatsapp-button3" href="#" text="Hola%21%20Me%20interesa%20la%20Crema%20Antimanchas%20Lumi%C4%97ra"
+     class="whatsapp-float"
+     target="_blank"
+     aria-label="Contactar por WhatsApp"
+     rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ========== LEAD FORM SCRIPT ========== -->
+  <script>
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var name = document.getElementById('leadName').value.trim();
+      var email = document.getElementById('leadEmail').value.trim();
+      var phone = document.getElementById('leadPhone').value.trim();
+
+      if (!name || !email) {
+        document.getElementById('formStatus').textContent = '⚠️ Por favor, llena tu nombre y correo.';
+        document.getElementById('formStatus').style.color = '#c62828';
+        return;
+      }
+
+      var data = {
+        name: name,
+        email: email,
+        phone: phone,
+        source: 'Lumiėra Landing Page',
+        date: new Date().toISOString()
+      };
+
+      // 🔁 REPLACE with your actual Google Apps Script URL
+      fetch('https://script.google.com/macros/s/TU_ID_AQUI/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function() {
+        console.log('✅ Lead captured:', data);
+      })
+      .catch(function(error) {
+        console.error('❌ Error:', error);
+      });
+
+      document.getElementById('formStatus').textContent = '✅ ¡Listo! Te avisaremos cuando el Gel esté disponible.';
+      document.getElementById('formStatus').style.color = '#1e7e34';
+
+      document.getElementById('leadName').value = '';
+      document.getElementById('leadEmail').value = '';
+      document.getElementById('leadPhone').value = '';
+    });
+  </script>
+
+<!-- ========== COUNTDOWN TIMER SCRIPT ========== -->
+<script>
+  (function() {
+    // Set the countdown date (7 days from now)
+    var countdownDate = new Date();
+    countdownDate.setDate(countdownDate.getDate() + 7);
+
+    function updateCountdown() {
+      var now = new Date().getTime();
+      var distance = countdownDate.getTime() - now;
+
+      // If timer reaches zero, reset to 7 days
+      if (distance < 0) {
+        countdownDate = new Date();
+        countdownDate.setDate(countdownDate.getDate() + 7);
+        distance = countdownDate.getTime() - now;
+      }
+
+      // Calculate time units
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Format to always show 2 digits
+      var daysStr = String(days).padStart(2, '0');
+      var hoursStr = String(hours).padStart(2, '0');
+      var minutesStr = String(minutes).padStart(2, '0');
+      var secondsStr = String(seconds).padStart(2, '0');
+
+      // Update the DOM
+      document.getElementById('days').textContent = daysStr;
+      document.getElementById('hours').textContent = hoursStr;
+      document.getElementById('minutes').textContent = minutesStr;
+      document.getElementById('seconds').textContent = secondsStr;
+    }
+
+    // Update every second
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+  })();
+</script>
+
+<script>
+  (function() {
+    // --- 1. Your Sales Team Mapping ---
+    // IMPORTANT: Replace the placeholder phone numbers with the real ones.
+    const salesTeam = {
+        'Nika': '18096248042',   // Replace with Ana's real number
+        'Mirian': '18094917174',  // Replace with Luis's real number
+        'Claudia': '18494017896'  // Replace with Maria's real number
+    };
+
+    // --- 2. Your Default Number (for ads / direct traffic) ---
+    const defaultNumber = '18295146889'; // <-- Replace with YOUR WhatsApp number
+
+    // --- 3. Get the sales rep code from the URL ---
+    function getRepCode() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('rep');
+    }
+
+    // --- 4. Get the correct WhatsApp number ---
+    function getWhatsAppNumber() {
+        const repCode = getRepCode();
+        if (repCode && salesTeam[repCode]) {
+            return salesTeam[repCode]; // Return the sales rep's number
+        }
+        return defaultNumber; // Return the default number
+    }
+
+    // --- 5. Update the WhatsApp button(s) on the page ---
+    function updateWhatsAppLinks() {
+        const phoneNumber = getWhatsAppNumber();
+        const message = "Hola!%20Quiero%20la%20Crema%20Antimanchas%20Lumi%C4%97ra%20Forever"; // Your pre-filled message
+
+        // Find all elements with the ID 'whatsapp-button'
+        const buttons = document.querySelectorAll('#whatsapp-button');
+        buttons.forEach(button => {
+            // Construct the new WhatsApp link
+            const newHref = `https://wa.me/${phoneNumber}?text=${message}`;
+            button.href = newHref;
+        });
+    }
+
+    // --- 6. Run the function when the page loads ---
+    // This waits for the page to be fully loaded before trying to update the links
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updateWhatsAppLinks);
+    } else {
+        updateWhatsAppLinks();
+    }
+
+  })();
+</script>
+
+</body>
+</html>
