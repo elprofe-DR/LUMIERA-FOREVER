@@ -430,8 +430,142 @@
         padding: 16px;
       }
     }
+
+    /* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 40px 5%;
+  }
+  .hero-text {
+    padding-right: 0;
+  }
+  .hero-text h1 {
+    font-size: 32px;
+  }
+  .tag-group {
+    justify-content: center;
+  }
+  .price-block {
+    text-align: center;
+  }
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 5%;
+  }
+  nav {
+    gap: 12px 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero {
+    padding: 30px 5%;
+  }
+  .hero-text h1 {
+    font-size: 26px;
+  }
+  .hero-text p {
+    font-size: 15px;
+  }
+  .btn {
+    padding: 12px 24px;
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+  }
+  .tag-group span {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+  .price-block .current {
+    font-size: 28px;
+  }
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+  .lead-capture form {
+    max-width: 100%;
+  }
+  .lead-capture input {
+    font-size: 15px;
+    padding: 12px 14px;
+  }
+  .lead-capture button {
+    font-size: 16px;
+    padding: 14px;
+  }
+  .whatsapp-float {
+    bottom: 16px;
+    right: 16px;
+    width: 56px;
+    height: 56px;
+  }
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 22px;
+  }
+  .hero-text .badge {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+  .price-block .current {
+    font-size: 24px;
+  }
+  .price-block .old {
+    font-size: 14px;
+  }
+  .price-block .discount {
+    font-size: 11px;
+    padding: 2px 8px;
+  }
+  .btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  .product-card {
+    padding: 16px;
+  }
+  .product-card h3 {
+    font-size: 18px;
+  }
+  .testimonial-card {
+    padding: 16px;
+  }
+  .video-card {
+    padding: 8px;
+  }
+  .final-cta h2 {
+    font-size: 22px;
+  }
+  .final-cta .btn {
+    font-size: 15px;
+    padding: 14px 28px;
+  }
+}
   </style>
 </head>
+  
 <body>
 
   <!-- ========== HEADER ========== -->
